@@ -22,7 +22,7 @@ export class MessageService {
 			.catch((error: Response) => Observable.throw(error.json()));
 	}
 
-	getMessage() {
+	/*getMessage() {
 		return this.http.get('http://localhost:3000/message')
 			.map((response: Response) => {
 				const messages = response.json().obj;
@@ -34,7 +34,7 @@ export class MessageService {
 				return transformedMessages;
 			})
 			.catch((error: Response) => Observable.throw(error.json()));
-	}
+	}*/
 
 	deleteMessage(mes: Message) {
 		this.messages.splice(this.messages.indexOf(mes), 1);

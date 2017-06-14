@@ -24,12 +24,12 @@ export class MessageListComponent implements OnInit {
     }
 
     //this is how you get items from service
-    ngOnInit() {
+    /*ngOnInit() {
     	this.messageService.getMessage()
     		.subscribe(
     			(messages: Message[]) => {
     				this.messages = messages;
     			}
     		);
-    }
+    }*/
 }
