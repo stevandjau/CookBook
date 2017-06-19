@@ -9,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 			</div>
 			<nav class= "col-md-9">
 				<ul class= "nav navbar-nav pull-right">
-					<li routerLinkActive="active"><a [routerLink]="['/messages']">Recipes</a></li>
+					<li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
 					<li routerLinkActive="active" *ngIf="!isLoggedIn()"><a [routerLink]="['/auth']">Login</a></li>
 					<li *ngIf="isLoggedIn()"><app-logout></app-logout></li>
 				</ul>

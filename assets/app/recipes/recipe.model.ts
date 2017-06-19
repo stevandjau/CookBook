@@ -1,6 +1,13 @@
 export class Recipe {
-	constructor(
-		public name: string,
-		public imageurl?: string
-	)
+	name: string;
+	imageurl: string;
+	id:string;
+	username: string;
+
+	constructor( name: string, username:string, id?: string, imageurl?:string){
+		this.name = name;
+		this.id = id;
+		this.imageurl = imageurl;
+		this.username = username;
+	}
 }

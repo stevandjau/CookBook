@@ -15,6 +15,10 @@ import { LogoutComponent } from './auth/logout.component';
 import { SignupComponent } from './auth/signup.component';
 import { SigninComponent } from './auth/signin.component';
 import { AuthService } from './auth/auth.service';
+import { RecipeListComponent } from './recipes/recipe-list.module';
+import { RecipeService } from './recipes/recipe.service';
+import { RecipeAddForm } from './recipes/recipe-addform.module';
+import { MaterialAddForm } from './materials/material-addform.component';
 
 @NgModule({
     declarations: [
@@ -27,15 +31,18 @@ import { AuthService } from './auth/auth.service';
         HeaderComponent,
         LogoutComponent,
         SignupComponent,
-        SigninComponent
+        SigninComponent,
+        RecipeListComponent,
+        RecipeAddForm,
+        MaterialAddForm
     ],
     imports: [
-        BrowserModule, 
-        FormsModule, 
-        Routing, 
-        ReactiveFormsModule, 
+        BrowserModule,
+        FormsModule,
+        Routing,
+        ReactiveFormsModule,
         HttpModule],
-    providers: [AuthService],
+    providers: [AuthService,RecipeService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

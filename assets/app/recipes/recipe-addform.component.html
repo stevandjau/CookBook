@@ -1,0 +1,35 @@
+<div class="col-md-8 col-md-offset-2">
+	<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+
+		<div class="form-group">
+			<label for="recipeName">Recipe Name</label>
+			<input type="text" id="recipeName" class=form-control formControlName="recipeName">
+		</div>
+
+		<div class="form-group">
+			<label for="userName">User Name</label>
+			<input type="text" id="userName" class=form-control formControlName="userName">
+		</div>
+
+		<span class="btn btn-default" (click)="addMaterial()">Add</span>
+		<!-- list of materials -->
+		<div formArrayName="materials">
+        <div *ngFor="let materials of recipeForm.controls.materials.controls; let i=index">
+            <!-- address header, show remove button when more than one address available -->
+            <div>
+                <h3>Material {{i + 1}}</h3>
+                <span *ngIf="recipeForm.controls.materials.controls.length > 1" (click)="removeMaterial(i)">Remove
+                </span>
+            </div>
+
+						<div [formGroupName]="i">
+							<material [group]='recipeForm.controls.materials.controls[i]'></material>
+						</div>
+
+				</div>
+		</div>
+
+
+		<button class="btn btn-primary" type="submit" [disabled]="!recipeForm.valid">Submit</button>
+	</form>
+</div>
