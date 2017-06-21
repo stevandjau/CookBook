@@ -32,7 +32,6 @@ export class RecipeAddForm implements OnInit {
       mats.push(mat);
     }
 
-    console.log(mats);
     this.recipeService.addRecipe(recipe, mats)
       .subscribe(
         data => console.log(data),
@@ -59,7 +58,6 @@ export class RecipeAddForm implements OnInit {
   addMaterial() {
     const control = <FormArray>this.recipeForm.controls['materials'];
     control.push(this.initMaterials());
-    console.log(this.recipeForm);
   }
 
   removeMaterial(i:number) {
