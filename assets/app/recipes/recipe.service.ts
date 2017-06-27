@@ -18,13 +18,13 @@ export class RecipeService {
 
 		const header = new Headers({'Content-Type':'application/json'});
 		const token = localStorage.getItem('token') ? '?token='+localStorage.getItem('token') : '';
-		return this.http.post('http://localhost:3000/recipe/create'+token, body, {headers:header})
+		return this.http.post('https://cookbook-finalproject.herokuapp.com/recipe/create'+token, body, {headers:header})
 			.map((response: Response) => response.json())
 			.catch((error:Response) => Observable.throw(error.json()));
 	}
 
 	getRecipe() {
-		return this.http.get('http://localhost:3000/recipe')
+		return this.http.get('https://cookbook-finalproject.herokuapp.com/recipe')
 			.map((response: Response) => {
 				const recipes = response.json().obj;
 				let jsonRecipes: Recipe[] = [];

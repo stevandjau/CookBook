@@ -11,7 +11,7 @@ var userRoutes = require('./routes/user');
 var recipeRoutes = require('./routes/recipe');
 
 var app = express();
-mongoose.connect('localhost:27017/practice1');
+mongoose.connect('testuser:testpass@ds139242.mlab.com:39242/cookbook');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
