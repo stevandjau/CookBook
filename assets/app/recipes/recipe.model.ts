@@ -4,7 +4,7 @@ export class Recipe {
 	id:string;
 	username: string;
 
-	constructor( name: string, username:string, id?: string, imageurl?:string){
+	constructor( name: string, username?:string, id?: string, imageurl?:string){
 		this.name = name;
 		this.id = id;
 		this.imageurl = imageurl;

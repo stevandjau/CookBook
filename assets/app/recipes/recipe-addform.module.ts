@@ -20,8 +20,7 @@ export class RecipeAddForm implements OnInit {
 
   onSubmit() {
     const recipe= new Recipe(
-      this.recipeForm.value.recipeName,
-      this.recipeForm.value.userName
+      this.recipeForm.value.recipeName
     );
 
     var mats:Material[] = [];
@@ -43,7 +42,6 @@ export class RecipeAddForm implements OnInit {
   ngOnInit() {
     this.recipeForm = new FormGroup({
       recipeName: new FormControl(null, Validators.required),
-      userName: new FormControl(null, Validators.required),
       materials: this._fb.array([this.initMaterials()])
     })
   }

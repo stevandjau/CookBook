@@ -19,6 +19,7 @@ import { RecipeListComponent } from './recipes/recipe-list.module';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipeAddForm } from './recipes/recipe-addform.module';
 import { MaterialAddForm } from './materials/material-addform.component';
+import { RecipeDisplay } from './recipes/recipe-display.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +35,8 @@ import { MaterialAddForm } from './materials/material-addform.component';
         SigninComponent,
         RecipeListComponent,
         RecipeAddForm,
-        MaterialAddForm
+        MaterialAddForm,
+        RecipeDisplay
     ],
     imports: [
         BrowserModule,

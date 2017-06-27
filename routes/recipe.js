@@ -1,6 +1,8 @@
 var express = require('express');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
+var multer = require('multer');
+var upload = multer({dest: './public/img'});
 
 var Recipe = require('../models/recipe');
 var User = require('../models/user');
@@ -23,7 +25,7 @@ router.get('/',function (req, res, next) {
 		})
 })
 
-router.post('/create',function (req, res, next) {
+router.post('/create', upload.single('file'), function (req, res, next) {
 	var token = jwt.verify(req.query.token,'secret',function(err, decoded){
 		if (err) {
     		return res.status(500).json({

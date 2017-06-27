@@ -3,29 +3,19 @@ import { Component, OnInit} from '@angular/core';
 import { Recipe } from './recipe.model';
 import { RecipeService } from './recipe.service';
 import { RecipeAddForm } from './recipe-addform.module';
+import { RecipeDisplay } from './recipe-display.component';
 
 @Component({
   selector: 'app-recipe-list',
-  template: `<div>
+  template: `
+    <div>
       <recipe-add-form></recipe-add-form>
+      <recipe></recipe>
     </div>
-      <!--<div *ngFor= let item as recipes )>
-          {{item.content}}
-      </div>-->
+
   `
 })
 
-export class RecipeListComponent implements OnInit {
-  recipes: Recipe[];
+export class RecipeListComponent {
 
-  constructor (private recipeService:RecipeService){}
-
-  ngOnInit() {
-    this.recipeService.getRecipe()
-      .subscribe(
-        (recipes:Recipe[])=> {
-          this.recipes = recipes
-        }
-      )
-  }
 }
