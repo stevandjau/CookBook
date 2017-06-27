@@ -3,6 +3,7 @@ import {Component, OnInit} from '@angular/core';
 @Component ({
 	selector: 'app-header',
 	template: `
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Lobster|Roboto" rel="stylesheet">
 		<header class="row">
 			<div class= "col-md-3">
 				<h1>CookBook</h1>
@@ -15,7 +16,15 @@ import {Component, OnInit} from '@angular/core';
 				</ul>
 			</nav>
 		</header>
-	`
+	`,
+	styles:[`
+		h1 {
+			font-family: 'Lobster', cursive;
+			color:#fd6b8a;
+			font-size:4em;
+		}
+
+		`]
 })
 
 export class HeaderComponent {

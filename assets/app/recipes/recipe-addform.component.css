@@ -1,0 +1,12 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'Libre Baskerville', serif;
+}
+
+h2 {
+  color: #70ceff;
+  font-size: 1.9em;
+}
+
+h3 {
+  font-size: 1.25em;
+}

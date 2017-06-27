@@ -5,10 +5,12 @@ import { Recipe } from './recipe.model';
 import { Material } from '../materials/material.model';
 import { RecipeService } from './recipe.service';
 import { MaterialAddForm } from '../materials/material-addform.component';
+import { RecipeDisplay } from './recipe-display.component';
 
 @Component({
   selector:'recipe-add-form',
-  templateUrl: './recipe-addform.component.html'
+  templateUrl: './recipe-addform.component.html',
+  styleUrls: ['./recipe-addform.component.css']
 })
 
 export class RecipeAddForm implements OnInit {
@@ -23,6 +25,7 @@ export class RecipeAddForm implements OnInit {
       this.recipeForm.value.recipeName
     );
 
+    const disp = new RecipeDisplay(this.recipeService);
     var mats:Material[] = [];
 
     //create array of materials object
@@ -37,6 +40,8 @@ export class RecipeAddForm implements OnInit {
         error => console.error(error)
       );
     this.recipeForm.reset();
+
+    disp.ngOnInit();
   }
 
   ngOnInit() {

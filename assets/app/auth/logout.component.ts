@@ -6,7 +6,7 @@ import {AuthService} from './auth.service';
 @Component ({
 	selector: 'app-logout',
 	template: `
-		<a (click)="onLogout()">Logout</a>
+		<a style="padding-top: 15px;padding-bottom: 15px;" (click)="onLogout()">Logout</a>
 	`
 })
 

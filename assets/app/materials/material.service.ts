@@ -16,7 +16,7 @@ export class RecipeService {
     const body = JSON.stringify(material);
     const header = new Headers({'Content-Type':'application/json'});
     const token = localStorage.getItem('token') ? '?token='+localStorage.getItem('token') : '';
-		return this.http.post('https://cookbook-finalproject.herokuapp.com/material/create'+token, body, {headers:header})
+		return this.http.post('http://localhost:3000/material/create'+token, body, {headers:header})
 			.map((response: Response) => response.json())
 			.catch((error:Response) => Observable.throw(error.json()));
 	}

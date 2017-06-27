@@ -10,7 +10,7 @@ var Material = require('../models/material');
 
 router.get('/',function (req, res, next) {
 	Recipe.find()
-		.populate('user', 'firstName lastName')
+		.populate('user', 'firstName lastName').populate('materials', 'name qty')
 		.exec(function(err,recipes){
 			if (err) {
 				return res.status(500).json({
